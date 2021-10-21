@@ -53,11 +53,11 @@ END_PROGRAM
 
 CONFIGURATION Config0
   VAR_GLOBAL
-    IN1  AT %IX0.3 : BOOL;
-    IN2  AT %IX0.4 : BOOL;
-    IN3  AT %IX0.5 : BOOL;
-    IN4  AT %IX0.6 : BOOL;
-    IN5  AT %IX0.7 : BOOL;
+    IN1 AT %IX0.3 : BOOL;
+    IN2 AT %IX0.4 : BOOL;
+    IN3 AT %IX0.5 : BOOL;
+    IN4 AT %IX0.6 : BOOL;
+    IN5 AT %IX0.7 : BOOL;
     OutReady AT %QX0.2 : BOOL; 
     Out AT %QX0.0 : BOOL;
     Debug AT %QX1.2 : BOOL;
