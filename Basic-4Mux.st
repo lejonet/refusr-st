@@ -37,16 +37,18 @@ PROGRAM Boiler
   VAR
     Data  : ARRAY[1..20] OF BOOL;
     Ready : BOOL;
+    Output : BOOL;
     CollectInput : F_CollectInput;
+    OutTimer : TOF;
   END_VAR
 
   CollectInput();
   Debug := 0;
   Ready := CollectInput.Finished;
   IF Ready AND NOT OutReady THEN
-    Out := (Data[2] AND (NOT Data[1]) OR Data[5]);
-
+    Output := (Data[2] AND (NOT Data[1]) OR Data[5]);
     OutReady := 1;
+    OutTimer(IN := Output, PT := T#2s, Q => Out);
   END_IF;
 END_PROGRAM
 
