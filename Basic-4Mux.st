@@ -48,7 +48,8 @@ PROGRAM Boiler
   IF Ready AND NOT OutReady THEN
     Output := (Data[2] AND (NOT Data[1]) OR Data[5]);
     OutReady := 1;
-    OutTimer(IN := Output, PT := T#2s, Q => Out);
+    OutTimer(IN := Output, PT := T#2000ms);
+    Out := OutTimer.Q;
   END_IF;
 END_PROGRAM
 
